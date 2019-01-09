@@ -39,6 +39,19 @@ development:
     - settings_data.json
 ```
 
+Update browserSync.js with your Shopify info
+
+```
+const browserSync = require("browser-sync");
+const BASE_URL = "[DEV_SHOP]";
+const PREVIEW_QUERY = "?preview_theme_id=[DEV_THEME]";
+
+browserSync({
+  proxy: `${BASE_URL}${PREVIEW_QUERY}`,
+  files: "browserUpdate.js"
+});
+```
+
 Run start command and local changes will be pushed.
 
 ```
